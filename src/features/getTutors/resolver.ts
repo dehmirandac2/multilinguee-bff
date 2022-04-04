@@ -4,7 +4,7 @@ const tutors = [
     name: "Joao Silva",
     about:
       "Professor há 5 anos com ampla experiência em gramática da língua inglesa.",
-    languages: ["french", "english"],
+    languages: ["fr", "en"],
     reviews: {
       stars: 4,
       total: 201,
@@ -15,7 +15,7 @@ const tutors = [
     name: "Claudia Souza",
     about:
       "Professora há 10 anos com ampla experiência em gramática da língua espanhola.",
-    languages: ["spanish"],
+    languages: ["es"],
     reviews: {
       stars: 3,
       total: 301,

@@ -4,21 +4,22 @@
   "description": "BFF to the Multilinguee application",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./src/index.js",
+    "start": "nodemon --watch 'src/' --exec 'ts-node ./src/index.ts' -e ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "author": "Deborah Miranda",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^3.6.7",
     "graphql": "^16.3.0",
-    "graphql-modules": "^2.0.0"
+    "graphql-modules": "^2.0.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "@babel/node": "^7.16.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "@babel/preset-env": "^7.16.11"
+    "@babel/preset-env": "^7.16.11",
+    "ts-node": "^10.7.0"
   }
 }

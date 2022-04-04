@@ -1,6 +1,6 @@
 import { ApolloServer } from "apollo-server";
 
-import { application } from "./features/application.js";
+import { application } from "./features/application";
 
 const schema = application.createSchemaForApollo();
 
