@@ -2,9 +2,8 @@ import { gql } from "apollo-server";
 
 const type = gql`
   input UserInput {
-    id: ID
     name: String
-    lastname: String
+    surname: String
     email: String
     password: String
     type: String
@@ -13,7 +12,7 @@ const type = gql`
   type User {
     id: ID
     name: String
-    lastname: String
+    surname: String
     email: String
     password: String
     type: String

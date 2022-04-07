@@ -1,7 +1,9 @@
+import createTutor from "../../database/queries/createTutor";
+
 const user = {
   id: 1,
   name: "Joao",
-  lastname: "Silva",
+  surname: "Silva",
   email: "joao.silva@gmail.com",
   password: "blabla",
   type: "tutor",
@@ -9,7 +11,13 @@ const user = {
 
 const resolvers = {
   Mutation: {
-    createUser: () => user,
+    createUser: async (_parent: any, { userInput }: any) => {
+      if (userInput.type === "tutor") {
+        await createTutor(userInput);
+      }
+
+      return user;
+    },
   },
 };
 

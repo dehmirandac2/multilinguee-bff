@@ -1,3 +1,5 @@
+import listTutors from "../../database/queries/listTutors";
+
 const tutors = [
   {
     id: "1",
@@ -25,7 +27,10 @@ const tutors = [
 
 const resolvers = {
   Query: {
-    getTutors: () => tutors,
+    getTutors: async () => {
+      await listTutors();
+      return tutors;
+    },
   },
 };
 
