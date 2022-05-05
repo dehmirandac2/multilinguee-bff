@@ -9,17 +9,13 @@ const type = gql`
     type: String
   }
 
-  type User {
-    id: ID
-    name: String
-    surname: String
-    email: String
-    password: String
+  type UserResponse {
+    id: ID!
     type: String
   }
 
   type Mutation {
-    createUser(userInput: UserInput): User
+    createUser(userInput: UserInput!): UserResponse!
   }
 `;
 

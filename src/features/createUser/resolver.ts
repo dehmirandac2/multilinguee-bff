@@ -1,22 +1,16 @@
-import createTutor from "../../database/queries/createTutor";
-
-const user = {
-  id: 1,
-  name: "Joao",
-  surname: "Silva",
-  email: "joao.silva@gmail.com",
-  password: "blabla",
-  type: "tutor",
-};
+import { ApolloError } from "apollo-server";
+import createUser from "../../database/queries/createUser";
 
 const resolvers = {
   Mutation: {
     createUser: async (_parent: any, { userInput }: any) => {
-      if (userInput.type === "tutor") {
-        await createTutor(userInput);
-      }
+      try {
+        const user = await createUser(userInput);
 
-      return user;
+        return { id: 0, type: userInput.type };
+      } catch (err) {
+        throw new ApolloError("mutation error");
+      }
     },
   },
 };
