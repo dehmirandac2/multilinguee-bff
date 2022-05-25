@@ -3,7 +3,7 @@ import { gql } from "apollo-server";
 const type = gql`
 
   input Hours {
-    init: String, finish: String
+    init: String, end: String
   }
 
   input ClassDays {
@@ -16,23 +16,15 @@ const type = gql`
     saturday: Hours 
   }
 
-  input Languages {
-    english: Boolean
-    spanish: Boolean
-    french: Boolean
-    german: Boolean
-    italian: Boolean
-  }
-
   input TutorInput {
+    id: ID!
     about: String
-    languages: [Languages]!
+    languages: [String]!
     classDays: [ClassDays!]!
   }
 
   type TutorResponse {
     id: ID!
-    type: String
   }
 
   type Mutation {

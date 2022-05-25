@@ -5,8 +5,8 @@ const resolvers = {
   Mutation: {
     createTutor: async (_parent: any, { tutorInput }: any) => {
       try {
-        // const tutor = await createTutor(tutorInput);
-        return { id: 0, type: 'teste'};
+        await createTutor(tutorInput);
+        return { id: tutorInput.id};
       } catch (err) {
         throw new ApolloError("mutation error");
       }
