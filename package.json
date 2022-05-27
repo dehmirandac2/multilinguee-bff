@@ -4,7 +4,7 @@
   "description": "BFF to the Multilinguee application",
   "main": "src/index.js",
   "scripts": {
-    "start": "nf start",
+    "start": "npx ts-node ./src/index.ts",
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node ./src/index.ts' -e ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
