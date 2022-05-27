@@ -1,17 +1,14 @@
 import { gql } from "apollo-server";
 
 const type = gql`
-  type ReviewInput {
-    stars: Int
-    total: Int
-  }
-
   type Tutors {
     id: ID
     name: String
+    surname: String
     about: String
-    languages: [String]
-    reviews: ReviewInput!
+    languages: String
+    stars: Int!
+    totalReviews: Int
   }
 
   type Query {
