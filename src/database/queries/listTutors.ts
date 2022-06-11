@@ -22,7 +22,7 @@ const listTutors = async () => {
   `);
 
       
-return tutors
+  return tutors
 };
 
 export default listTutors;
