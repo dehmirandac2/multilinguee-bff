@@ -12,6 +12,8 @@ import { GetTutorClassesModule } from "./GetTutorClasses/modules";
 import { GetStudentNextClassModule } from "./GetStudentNextClass/modules";
 
 import { AddFavoriteModule } from "./AddFavorite/modules";
+import { DeleteFavoriteModule } from "./deleteFavorite/modules";
+import { GetFavoritesModule } from "./getFavorites/modules";
 
 export const application = createApplication({
   modules: [
@@ -23,6 +25,8 @@ export const application = createApplication({
     CreateUserModule,
     CreateTutorModule,
     CreateClass,
-    AddFavoriteModule
+    AddFavoriteModule,
+    DeleteFavoriteModule,
+    GetFavoritesModule
   ],
 });

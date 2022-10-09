@@ -7,8 +7,8 @@ interface Tutor {
 
 const resolvers = {
   Query: {
-    getTutor: async (_parent: any, { id }: any) => {
-      const result = await getTutorQuery(id);
+    getTutor: async (_parent: any, { tutorInput }: any) => {
+      const result = await getTutorQuery(tutorInput);
 
       const tutor: Tutor[] = Object.values(JSON.parse(JSON.stringify(result)));
 

@@ -1,6 +1,10 @@
 import db from "../mysql";
 
-const getTutor = async (id: string) => {
+interface Prop {
+  tutorId: string,
+  studentId: string
+}
+const getTutor = async ({tutorId, studentId}: Prop) => {
   const connection = await db();
 
   const [tutor] = await connection.execute(`
@@ -8,6 +12,9 @@ const getTutor = async (id: string) => {
     users.id,
     name,
     surname,
+    CASE WHEN f.tutorId IS NOT NULL
+      THEN true
+      ELSE false END AS isFavorite,
     MAX(about) AS about,
     CASE WHEN MAX(stars) IS NOT NULL
       THEN ROUND(AVG(stars), 0)
@@ -17,7 +24,8 @@ const getTutor = async (id: string) => {
   INNER JOIN tutors ON users.id = tutors.userId
   INNER JOIN tutors_languages ON users.id = tutors_languages.userId
   LEFT JOIN tutor_reviews ON users.id = tutor_reviews.userId
-  WHERE users.id = "${id}"
+  LEFT JOIN favorites AS f ON f.studentId = "${studentId}" and f.tutorId = users.id
+  WHERE users.id = "${tutorId}"
   `);
       
   return tutor

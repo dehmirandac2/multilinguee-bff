@@ -9,10 +9,11 @@ const type = gql`
     languages: String
     stars: Int!
     totalReviews: Int
+    isFavorite: Boolean
   }
 
   type Query {
-    getTutors: [Tutors]
+    getTutors(studentId: String): [Tutors]
   }
 `;
 

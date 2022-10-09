@@ -2,8 +2,8 @@ import listTutors from "../../database/queries/listTutors";
 
 const resolvers = {
   Query: {
-    getTutors: async () => {
-      const tutors = await listTutors();
+    getTutors: async (_parent: any, { studentId }: any) => {
+      const tutors = await listTutors(studentId);
       return tutors;
     },
   },
