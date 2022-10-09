@@ -5,11 +5,12 @@ interface Prop {
   password: string;
 }
 
-const login = async ({ email, password }: Prop) => {
+const login = async ({ email }: Prop) => {
     const connection = await db();
 
     const [result] = await connection.execute(`
     SELECT 
+    id,
     email,
     password,
     type

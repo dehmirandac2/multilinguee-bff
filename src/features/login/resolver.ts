@@ -8,6 +8,7 @@ interface User {
   password: string;
   email: string,
   type: string
+  id: string
 }
 
 const APP_SECRET = 'multilinguee_my_first_jwt_experience';
@@ -19,7 +20,7 @@ const resolvers = {
         const result = await login({email: emailInput, password: passwordInput});
 
         const user: User[] = Object.values(JSON.parse(JSON.stringify(result)));
-        const {type, email, password} = user[0]
+        const {type, email, password, id} = user[0]
         
         if (!user) {
           throw new Error('No user found')
@@ -29,7 +30,7 @@ const resolvers = {
           throw new Error('Invalid password')
         }
     
-        const token = jwt.sign({ email, type }, APP_SECRET)
+        const token = jwt.sign({ email, type, id }, APP_SECRET)
         return { token, type };
       } catch (err) {
         throw new ApolloError("Email/Password is not right");
