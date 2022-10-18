@@ -4,6 +4,7 @@ import { LoginModule } from "./login/modules";
 import { CreateTutorModule } from "./createTutor/modules";
 import { CreateUserModule } from "./createUser/modules";
 import { CreateClass } from "./createClass/modules";
+import { DeleteClassModule } from "./deleteClass/modules";
 
 import { GetTutorsModule } from "./getTutors/modules";
 import { GetTutorModule } from "./getTutor/modules";
@@ -25,6 +26,7 @@ export const application = createApplication({
     CreateUserModule,
     CreateTutorModule,
     CreateClass,
+    DeleteClassModule,
     AddFavoriteModule,
     DeleteFavoriteModule,
     GetFavoritesModule
