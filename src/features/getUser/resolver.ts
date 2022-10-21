@@ -2,8 +2,8 @@ import getUser from "../../database/queries/getUser";
 
 const resolvers = {
   Query: {
-    getUser: async () => {
-      const user = await getUser();
+    getUser: async (_parent: any, { studentId }: any) => {
+      const user = await getUser(studentId);
       return user;
     },
   },

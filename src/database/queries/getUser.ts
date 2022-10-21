@@ -1,16 +1,15 @@
-import { RowDataPacket } from "mysql2";
 import db from "../mysql";
 
-const getUser = async () => {
+const getUser = async (studentId: string) => {
   const connection = await db();
-
   const [user] = await connection.execute(`
   SELECT 
-    users.id,
+    id,
     name,
     surname,
-    email,
+    email
   FROM users 
+  WHERE id = ${studentId}
   `);
 
       

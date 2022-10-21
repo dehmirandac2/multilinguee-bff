@@ -15,11 +15,15 @@ import { GetStudentNextClassModule } from "./GetStudentNextClass/modules";
 import { AddFavoriteModule } from "./AddFavorite/modules";
 import { DeleteFavoriteModule } from "./deleteFavorite/modules";
 import { GetFavoritesModule } from "./getFavorites/modules";
+import { GetUserModule } from "./getUser/modules";
+import { EditUserModule } from "./editUser/modules";
+
 
 export const application = createApplication({
   modules: [
     LoginModule,
     GetTutorModule,
+    GetUserModule,
     GetTutorsModule,
     GetTutorClassesModule,
     GetStudentNextClassModule,
@@ -29,6 +33,7 @@ export const application = createApplication({
     DeleteClassModule,
     AddFavoriteModule,
     DeleteFavoriteModule,
-    GetFavoritesModule
+    GetFavoritesModule,
+    EditUserModule
   ],
 });
