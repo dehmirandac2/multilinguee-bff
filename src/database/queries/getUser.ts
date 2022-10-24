@@ -16,4 +16,17 @@ const getUser = async (studentId: string) => {
   return user
 };
 
+export const getUserByEmail = async (email: string) => {
+  const connection = await db();
+  const [user] = await connection.execute(`
+  SELECT 
+    id
+  FROM users 
+  WHERE email = '${email}'
+  `);
+
+      
+  return user
+};
+
 export default getUser;

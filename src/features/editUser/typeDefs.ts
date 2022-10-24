@@ -1,7 +1,7 @@
 import { gql } from "apollo-server";
 
 const type = gql`
-  input UserInput {
+  input UserEditInput {
     id: ID!
     name: String
     surname: String
@@ -9,7 +9,7 @@ const type = gql`
   }
 
   type Mutation {
-    editUser(userInput: UserInput!): Boolean
+    editUser(userInput: UserEditInput!): Boolean
   }
 `;
 
