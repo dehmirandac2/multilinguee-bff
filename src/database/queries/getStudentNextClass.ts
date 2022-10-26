@@ -5,14 +5,19 @@ const getStudentNextClass = async (studentId: string) => {
 
   const [studentNextClass] = await connection.execute(`
   SELECT 
-    id,
-    tutorId,
+    classes.id,
+    classes.tutorId,
     studentId,
     date,
     init,
     end,
-    topic
-  FROM classes 
+    topic,
+    about,
+    name,
+    surname
+  FROM classes
+  INNER JOIN users ON classes.tutorId = users.id
+  INNER JOIN tutors ON classes.tutorId = tutors.userId
   WHERE date >= CURDATE()
   AND studentId = '${studentId}'
   ORDER BY date

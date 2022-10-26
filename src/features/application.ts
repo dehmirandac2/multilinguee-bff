@@ -5,6 +5,7 @@ import { CreateTutorModule } from "./createTutor/modules";
 import { CreateUserModule } from "./createUser/modules";
 import { CreateClass } from "./createClass/modules";
 import { DeleteClassModule } from "./deleteClass/modules";
+import { EditClassModule } from "./editClass/modules";
 
 import { GetTutorsModule } from "./getTutors/modules";
 import { GetTutorModule } from "./getTutor/modules";
@@ -34,6 +35,7 @@ export const application = createApplication({
     AddFavoriteModule,
     DeleteFavoriteModule,
     GetFavoritesModule,
-    EditUserModule
+    EditUserModule,
+    EditClassModule
   ],
 });

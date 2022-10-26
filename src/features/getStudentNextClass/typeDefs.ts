@@ -9,6 +9,9 @@ const type = gql`
     init: String
     end: String
     topic: String
+    name: String
+    surname: String
+    about: String
   }
 
   type Query {
