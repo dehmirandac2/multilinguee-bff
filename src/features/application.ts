@@ -10,13 +10,13 @@ import { EditClassModule } from "./editClass/modules";
 
 import { GetTutorsModule } from "./getTutors/modules";
 import { GetTutorModule } from "./getTutor/modules";
-import { GetTutorClassesModule } from "./GetTutorClasses/modules";
+import { GetTutorClassesModule } from "./getTutorClasses/modules";
 
 import { GetStudentClassesModule } from "./getStudentClasses/modules";
 
-import { GetStudentNextClassModule } from "./GetStudentNextClass/modules";
+import { GetStudentNextClassModule } from "./getStudentNextClass/modules";
 
-import { AddFavoriteModule } from "./AddFavorite/modules";
+import { AddFavoriteModule } from "./addFavorite/modules";
 import { DeleteFavoriteModule } from "./deleteFavorite/modules";
 import { GetFavoritesModule } from "./getFavorites/modules";
 import { GetUserModule } from "./getUser/modules";
